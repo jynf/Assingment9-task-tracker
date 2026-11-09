@@ -1,38 +1,158 @@
-.App {
+/* main page */
+
+.app {
+  min-height: 100vh;  
+  width: 100%;
+  padding: 20px;
+  box-sizing: border-box;
+  background-color: #dbdde0;
+  color: #333;
+}
+
+header {
+  background-color: #187e4e;
+  color: white;
+  padding: 20px;
+  border-radius: 8px;
+}
+
+/* navigation */
+
+nav {
+  display: flex;
+  gap: 10px;
+  flex-wrap: wrap;
+}
+
+button {
+  padding: 8px 12px;
+  border: none;
+  border-radius: 4px;
+  background-color: #079e4b;
+  color: white;
+  cursor: pointer;
+}
+
+button:hover {
+  background-color: #006f7e;
+}
+
+/* dashboard statistics */
+
+.stats {
+  display: flex;
+  gap: 15px;
+  margin: 20px;
+}
+
+.stat {
+  flex: 1;
+  background-color: white;
+  padding: 15px;
   text-align: center;
+  border-radius: 6px;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+.stat h3 {
+  font-size: xx-large;
+  color: black;
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
+/*project cards */
+
+.form-section,
+.project-card {
+  background-color: white;
+  padding: 20px;
+  margin-bottom: 20px;
+  border-radius: 6px;
+  font-size:large;
 }
 
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
+form {
   display: flex;
   flex-direction: column;
+  gap: 10px;
+}
+
+input[type="text"],
+textarea {
+  padding: 10px;
+  border: 1px solid #babbbb;
+  border-radius: 4px;
+}
+
+textarea {
+  min-height: 70px;
+  resize: vertical;
+}
+
+/* task and form lists */
+
+.task-form {
+  display: flex;
+  flex-direction: row;
+  margin-top: 15px;
+}
+
+.task-list label {
+  display: flex;
   align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
+  gap: 8px;
+}
+
+.completed {
+  text-decoration: line-through;
+  color: #777777;
+}
+
+/* Dark Mode */
+
+.dark-mode {
+  background-color: #181827;
   color: white;
 }
 
-.App-link {
-  color: #61dafb;
+.dark-mode .stat,
+.dark-mode .form-section,
+.dark-mode .project-card {
+  background-color: #2c2c40;
+  color: #eeeeee;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
+.dark-mode .stat h3,
+.dark-mode .project-card h3 {
+  color: white;
+}
+
+.dark-mode input[type="text"],
+.dark-mode textarea {
+  background-color: #38384d;
+  color: white;
+  border-color: #606078;
+}
+
+.dark-mode input::placeholder,
+.dark-mode textarea::placeholder {
+  color: #c0c0cf;
+}
+
+.dark-mode .completed {
+  color: #b0b0b0;
+}
+
+/* small  window size */
+
+@media (max-width: 500px) {
+  .stats {
+    flex-direction: column;
   }
-  to {
-    transform: rotate(360deg);
+
+  .app {
+    padding: 10px;
+  }
+
+  .task-form {
+    flex-direction: column;
   }
 }
